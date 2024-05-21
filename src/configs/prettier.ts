@@ -11,7 +11,7 @@ export const prettier = async (): Promise<FlatConfigItem[]> => [
       'prettier/prettier': [
         'error',
         {
-          printWidth: 90,
+          printWidth: 100,
           tabWidth: 2,
           semi: false,
           singleQuote: true,
