@@ -18,7 +18,6 @@ export const imports = async (): Promise<FlatConfigItem[]> => [
       'import/no-cycle': 'error',
       'import/no-duplicates': ['error', { 'prefer-inline': true }],
       'import/no-empty-named-blocks': 'error',
-      'import/no-mutable-exports': 'error',
       'import/no-named-default': 'error',
       'import/no-self-import': 'error',
       'import/no-useless-path-segments': 'error',
