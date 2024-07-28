@@ -101,7 +101,7 @@ export const vue = async (
         'vue/comma-style': ['error', 'last'],
         'vue/component-name-in-template-casing': [
           'error',
-          'kebab-case',
+          'PascalCase',
           {
             registeredComponentsOnly: false,
           },
