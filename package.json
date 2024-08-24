@@ -5,10 +5,6 @@
   "private": false,
   "author": "sjkey",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sjkey/eslint-config-vue"
-  },
   "keywords": [
     "eslint-config",
     "eslint-config-vue"
