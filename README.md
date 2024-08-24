@@ -17,14 +17,7 @@ It provides a custom ESLint configuration, `@sjkey/eslint-config-vue`, to help y
 
 ## Installation
 ```shell
-# Using pnpm
 pnpm i -D @sjkey/eslint-config-vue
-
-# Using npm
-npm i -D @sjkey/eslint-config-vue
-
-# Using yarn
-yarn add -D @sjkey/eslint-config-vue
 ```
 ## Configuration
 
@@ -38,16 +31,6 @@ yarn add -D @sjkey/eslint-config-vue
    ```
 
 3. Sometimes a **reload** is required in VS Code
-
-
-## VS Code Support
-```shell
-// .vscode/settings.json
-{
-  // Enable ESLint flat config support
-  "eslint.experimental.useFlatConfig": true
-}
-```
 
 ## License
 
