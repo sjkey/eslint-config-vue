@@ -1,25 +1,50 @@
-import { FlatCompat } from '@eslint/eslintrc'
-import sjkeyConfig from './src'
-
-const compat = new FlatCompat()
+import { sjkeyConfig } from './src'
+import unusedImports from "eslint-plugin-unused-imports";
+import stylistic from '@stylistic/eslint-plugin'
+import stylisticTs from '@stylistic/eslint-plugin-ts'
 
 export default sjkeyConfig(
   {},
-  ...compat.config({
-    plugins: ['unused-imports', 'prefer-arrow-functions'],
+  {
+    plugins: {
+      '@stylistic': stylistic,
+      '@stylistic/ts': stylisticTs,
+      "unused-imports": unusedImports,
+    },
     rules: {
       'unused-imports/no-unused-imports': 'error',
 
-      'prefer-arrow-functions/prefer-arrow-functions': [
+
+      '@stylistic/brace-style': ['error', '1tbs'],
+      '@stylistic/ts/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'none',
+              requireLast: false,
+            },
+            singleline: {
+              delimiter: 'semi',
+              requireLast: false,
+            },
+          },
+        ],
+    '@stylistic/ts/type-annotation-spacing': [
         'error',
         {
-          allowNamedFunctions: false,
-          classPropertiesAllowed: false,
-          disallowPrototype: false,
-          returnStyle: 'unchanged',
-          singleReturnOnly: false,
+          after: true,
         },
       ],
     },
-  }),
+  }
+  // ...compat.config({
+  //   plugins: {
+  //     '@stylistic': stylistic,
+  //     "unused-imports": unusedImports,
+  //   },
+  //   rules: {
+  //     'unused-imports/no-unused-imports': 'error',
+  //     '@stylistic/brace-style': ['error', '1tbs'],
+  //   },
+  // }),
 )

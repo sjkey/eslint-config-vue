@@ -128,25 +128,10 @@ export const typescript = async (
           'error',
           { 'ts-ignore': 'allow-with-description' },
         ],
-        'ts/ban-types': ['error', { types: { Function: false } }],
-        'ts/brace-style': ['error', '1tbs'],
         'ts/consistent-type-definitions': ['error', 'type'],
         'ts/consistent-type-imports': [
           'error',
           { disallowTypeAnnotations: false, prefer: 'type-imports' },
-        ],
-        'ts/member-delimiter-style': [
-          'error',
-          {
-            multiline: {
-              delimiter: 'none',
-              requireLast: false,
-            },
-            singleline: {
-              delimiter: 'semi',
-              requireLast: false,
-            },
-          },
         ],
         'ts/member-ordering': [
           'error',
@@ -167,12 +152,6 @@ export const typescript = async (
         'ts/no-non-null-assertion': 'off',
         'ts/no-redeclare': 'error',
         'ts/no-require-imports': 'error',
-        'ts/type-annotation-spacing': [
-          'error',
-          {
-            after: true,
-          },
-        ],
         'ts/no-unused-vars': 'off',
         'ts/no-use-before-define': [
           'error',
