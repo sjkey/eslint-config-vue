@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { GLOB_SRC, GLOB_TS } from '../globs'
-import { pluginAntfu } from '../plugins'
+import { pluginAntfu, pluginStylistic, pluginStylisticTs } from '../plugins'
 import type {
   FlatConfigItem,
   OptionsComponentExts,
@@ -84,6 +84,30 @@ export const typescript = async (
       plugins: {
         antfu: pluginAntfu,
         ts: pluginTs as any,
+        '@stylistic': pluginStylistic,
+        '@stylistic/ts': pluginStylisticTs,
+      },
+      rules: {
+        '@stylistic/brace-style': ['error', '1tbs'],
+        '@stylistic/ts/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'none',
+              requireLast: false,
+            },
+            singleline: {
+              delimiter: 'semi',
+              requireLast: false,
+            },
+          },
+        ],
+        '@stylistic/ts/type-annotation-spacing': [
+          'error',
+          {
+            after: true,
+          },
+        ],
       },
     },
     // assign type-aware parser for type-aware files and type-unaware parser for the rest

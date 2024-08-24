@@ -15,7 +15,6 @@ import {
   unicorn,
   vue,
   yaml,
-  stylistic,
 } from './configs'
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from './types'
 import { combine, interopDefault } from './utils'
@@ -103,7 +102,6 @@ export const sjkeyConfig = async (
     prettier(),
     comments(),
     node(),
-    stylistic(),
     imports(),
     unicorn(),
     vue({
