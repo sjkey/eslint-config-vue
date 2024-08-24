@@ -20,15 +20,10 @@ export const typescript = async (
 ): Promise<FlatConfigItem[]> => {
   const { componentExts = [], overrides = {}, parserOptions = {} } = options
 
-  const files = options.files ?? [
-    GLOB_SRC,
-    ...componentExts.map((ext) => `**/*.${ext}`),
-  ]
+  const files = options.files ?? [GLOB_SRC, ...componentExts.map((ext) => `**/*.${ext}`)]
 
   const filesTypeAware = options.filesTypeAware ?? [GLOB_TS]
-  const tsconfigPath = options?.tsconfigPath
-    ? toArray(options.tsconfigPath)
-    : undefined
+  const tsconfigPath = options?.tsconfigPath ? toArray(options.tsconfigPath) : undefined
   const isTypeAware = !!tsconfigPath
 
   const typeAwareRules: FlatConfigItem['rules'] = {
@@ -93,10 +88,7 @@ export const typescript = async (
     },
     // assign type-aware parser for type-aware files and type-unaware parser for the rest
     ...(isTypeAware
-      ? [
-          makeParser(true, filesTypeAware),
-          makeParser(false, files, filesTypeAware),
-        ]
+      ? [makeParser(true, filesTypeAware), makeParser(false, files, filesTypeAware)]
       : [makeParser(false, files)]),
     {
       files,
@@ -107,11 +99,7 @@ export const typescript = async (
           '@typescript-eslint/',
           'ts/',
         ),
-        ...renameRules(
-          pluginTs.configs.strict.rules!,
-          '@typescript-eslint/',
-          'ts/',
-        ),
+        ...renameRules(pluginTs.configs.strict.rules!, '@typescript-eslint/', 'ts/'),
         'no-dupe-class-members': 'off',
         'no-loss-of-precision': 'off',
         'no-redeclare': 'off',
@@ -124,10 +112,7 @@ export const typescript = async (
             readonly: 'array-simple',
           },
         ],
-        'ts/ban-ts-comment': [
-          'error',
-          { 'ts-ignore': 'allow-with-description' },
-        ],
+        'ts/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
         'ts/consistent-type-definitions': ['error', 'type'],
         'ts/consistent-type-imports': [
           'error',

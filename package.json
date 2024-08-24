@@ -1,7 +1,7 @@
 {
   "name": "@sjkey/eslint-config-vue",
   "type": "module",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "private": false,
   "author": "sjkey",
   "license": "MIT",
@@ -28,6 +28,7 @@
     "build": "tsup --format esm,cjs --clean --dts",
     "dev": "tsup --format esm,cjs --watch & eslint-flat-config-viewer",
     "lint": "eslint --flag unstable_ts_config .",
+    "lint:fix": "eslint --flag unstable_ts_config --fix .",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

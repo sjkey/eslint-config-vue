@@ -8,7 +8,7 @@ export const vue = async (
 ): Promise<FlatConfigItem[]> => {
   const { files = [GLOB_VUE], overrides = {} } = options
 
-  const sfcBlocks = options.sfcBlocks === true ? {} : options.sfcBlocks ?? {}
+  const sfcBlocks = options.sfcBlocks === true ? {} : (options.sfcBlocks ?? {})
 
   const [pluginVue, parserVue, processorVueBlocks] = await Promise.all([
     // @ts-expect-error missing types

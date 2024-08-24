@@ -5,8 +5,7 @@ import { interopDefault } from '../utils'
 export const jsonc = async (
   options: OptionsFiles & OptionsOverrides = {},
 ): Promise<FlatConfigItem[]> => {
-  const { files = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC], overrides = {} } =
-    options
+  const { files = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC], overrides = {} } = options
 
   const [pluginJsonc, parserJsonc] = await Promise.all([
     interopDefault(import('eslint-plugin-jsonc')),
@@ -31,10 +30,7 @@ export const jsonc = async (
         'jsonc/comma-dangle': ['error', 'never'],
         'jsonc/comma-style': ['error', 'last'],
         'jsonc/indent': ['error', 2],
-        'jsonc/key-spacing': [
-          'error',
-          { afterColon: true, beforeColon: false },
-        ],
+        'jsonc/key-spacing': ['error', { afterColon: true, beforeColon: false }],
         'jsonc/no-bigint-literals': 'error',
         'jsonc/no-binary-expression': 'error',
         'jsonc/no-binary-numeric-literals': 'error',
@@ -59,10 +55,7 @@ export const jsonc = async (
 
         'jsonc/no-unicode-codepoint-escapes': 'error',
         'jsonc/no-useless-escape': 'error',
-        'jsonc/object-curly-newline': [
-          'error',
-          { consistent: true, multiline: true },
-        ],
+        'jsonc/object-curly-newline': ['error', { consistent: true, multiline: true }],
         'jsonc/object-curly-spacing': ['error', 'always'],
         'jsonc/object-property-newline': [
           'error',

@@ -16,12 +16,7 @@ import {
   vue,
   yaml,
 } from './configs'
-import type {
-  Awaitable,
-  FlatConfigItem,
-  OptionsConfig,
-  UserConfigItem,
-} from './types'
+import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from './types'
 import { combine, interopDefault } from './utils'
 
 export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>
@@ -92,9 +87,7 @@ export const sjkeyConfig = async (
     } else {
       if (fs.existsSync('.gitignore'))
         configs.push(
-          interopDefault(import('eslint-config-flat-gitignore')).then((r) => [
-            r(),
-          ]),
+          interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r()]),
         )
     }
   }

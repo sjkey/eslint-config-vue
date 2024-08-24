@@ -10,11 +10,7 @@ export const combine = async (
   return resolved.flat()
 }
 
-export const renameRules = (
-  rules: Record<string, any>,
-  from: string,
-  to: string,
-) =>
+export const renameRules = (rules: Record<string, any>, from: string, to: string) =>
   Object.fromEntries(
     Object.entries(rules).map(([key, value]) => {
       if (key.startsWith(from)) return [to + key.slice(from.length), value]

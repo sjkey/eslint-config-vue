@@ -18,7 +18,7 @@ export const prettier = async (): Promise<FlatConfigItem[]> => [
           bracketSpacing: true,
           arrowParens: 'always',
           trailingComma: 'all',
-          plugins: ["prettier-plugin-tailwindcss"]
+          plugins: ['prettier-plugin-tailwindcss'],
         },
       ],
     },

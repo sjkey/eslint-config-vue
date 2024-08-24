@@ -45,10 +45,7 @@ export type Rules = WrapRuleConfig<
   >
 >
 
-export type FlatConfigItem = Omit<
-  FlatESLintConfigItem<Rules, false>,
-  'plugins'
-> & {
+export type FlatConfigItem = Omit<FlatESLintConfigItem<Rules, false>, 'plugins'> & {
   /**
    * Custom name of each config item
    */

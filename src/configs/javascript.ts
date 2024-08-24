@@ -1,10 +1,6 @@
 import globals from 'globals'
 import { pluginAntfu, pluginUnusedImports } from '../plugins'
-import type {
-  FlatConfigItem,
-  OptionsIsInEditor,
-  OptionsOverrides,
-} from '../types'
+import type { FlatConfigItem, OptionsIsInEditor, OptionsOverrides } from '../types'
 
 export const javascript = async (
   options: OptionsIsInEditor & OptionsOverrides = {},
@@ -52,10 +48,7 @@ export const javascript = async (
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
         eqeqeq: ['error', 'smart'],
-        'new-cap': [
-          'error',
-          { capIsNew: false, newIsCap: true, properties: true },
-        ],
+        'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
         'no-alert': 'error',
         'no-array-constructor': 'error',
         'no-async-promise-executor': 'error',
@@ -113,8 +106,7 @@ export const javascript = async (
         'no-restricted-properties': [
           'error',
           {
-            message:
-              'Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.',
+            message: 'Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.',
             property: '__proto__',
           },
           {
@@ -249,10 +241,7 @@ export const javascript = async (
             varsIgnorePattern: '^_',
           },
         ],
-        'use-isnan': [
-          'error',
-          { enforceForIndexOf: true, enforceForSwitchCase: true },
-        ],
+        'use-isnan': ['error', { enforceForIndexOf: true, enforceForSwitchCase: true }],
         'valid-typeof': ['error', { requireStringLiterals: true }],
         'vars-on-top': 'error',
         yoda: ['error', 'never'],
